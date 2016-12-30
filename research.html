@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Tyler Ransom by tyleransom</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-29643011-3', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <style>
+      button.accordion {
+      font:14px/1.5 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+      cursor: pointer;
+      padding: 0px;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 100%;
+      transition: 0.4s;
+      background-color: #f8f8f8;
+      }
+      button.accordion.active, button.accordion:hover {
+      background-color: #f8f8f8;
+      }
+      button.accordion:after {
+      content: '[+]';
+      font-size: 90%;
+      color:#777;
+      float: left;
+      margin-left: 1px;
+      }
+
+      button.accordion.active:after {
+      content: "[\2212]";
+      }
+      div.panel {
+      padding: 0 20px;
+      margin-top: 5px;
+      display: none;
+      background-color: white;
+      font-size: 100%;
+      }
+      div.panel.show {
+      display: block !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Tyler Ransom</h1>
+        <p>Postdoctoral Associate<br>Duke University</p>
+        <h3><p class="view"><a href="https://tyleransom.github.io/">Home</a></p></h3>
+        <h3><p class="view"><a href="https://tyleransom.github.io/research.html">Research</a></p></h3>
+        <h3><p class="view"><a href="https://tyleransom.github.io/research/CV.pdf">CV</a></p></h3>  
+        <h3><p class="view"><a href="https://tyleransom.github.io/teaching.html">Teaching</a></p></h3> 
+        <h3><p class="view"><a href="https://tyleransom.github.io/personal.html">Personal</a></p></h3>
+        <p class="view"><b>Other pages:</b><br>
+        <a href="https://github.com/tyleransom">GitHub Profile</a><br>
+        <a href="https://scholar.google.com/citations?user=eohlTTcAAAAJ&hl=en">Google Scholar Profile</a><br>
+        <a href="http://ideas.repec.org/f/pra541.html">RePEc Profile</a><br>
+        <a href="http://www.mathworks.com/matlabcentral/fileexchange/authors/339606">MathWorks File Exchange profile</a></p> 
+        <p><b>Contact:</b><br>Social Science Research Institute<br>Duke University<br>229 Gross Hall<br>PO Box 90989<br>Durham, NC 27708</p>
+        <p><b>Email:</b> <a href="mailto:tyler.ransom@duke.edu">tyler.ransom@duke.edu</a></p>
+      </header>
+      <section>
+
+    <h3><a id="recent-papers-updated" class="anchor" href="#workingpapers" aria-hidden="true"><span class="octicon octicon-link"></span></a>Working Papers:</h3>
+    <p style="margin:0;" }><p > <a style="margin:0; font-size:100%; font-weight:bold" href="https://tyleransom.github.io/research/roymajors2016Dec27.pdf">Selective Migration, Occupational Choice, and the Wage Returns to College Majors</a> <br> (December 27, 2016) <button class="accordion">
+      Abstract
+    </button>
+    </p>
+    <div class="panel" style="background-color: #F1F1F1; color: #666; padding: 10px;"> I examine the extent to which the returns to college majors are influenced by selective migration and occupational choice across locations in the US. To quantify the role of selection, I develop and estimate an extended Roy model of migration, occupational choice, and earnings where, upon completing their education, individuals choose a location in which to live and an occupation in which to work. In order to estimate this high-dimensional choice model, I make use of machine learning methods that allow for model selection and estimation simultaneously in a non-parametric setting. I find that OLS estimates of the returns to business and STEM majors relative to education majors are upward biased by 15% on average and by as much as 30%. Using estimates of the model, I characterize the migration behavior of different college majors and find that migration flows are twice as sensitive to occupational concentration as they are to wage returns. This finding has important implications for local governments seeking to attract or retain skilled workers. </div></p>
+      </section>
+      <footer>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    <script> 
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+        acc[i].onclick = function(){
+            this.classList.toggle("active");
+            this.parentNode.nextElementSibling.classList.toggle("show");
+      }
+    }
+    </script>
+  </body>
+</html>
