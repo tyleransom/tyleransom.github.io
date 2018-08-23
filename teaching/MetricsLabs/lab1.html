@@ -11,6 +11,7 @@
 
 <meta name="author" content="ECON 4223" />
 
+<meta name="date" content="2018-08-23" />
 
 <title>In-class Lab 1</title>
 
@@ -122,12 +123,12 @@ $(document).ready(function () {
 
 <h1 class="title toc-ignore">In-class Lab 1</h1>
 <h4 class="author"><em>ECON 4223</em></h4>
-<h4 class="date"><em>August 9, 2018</em></h4>
+<h4 class="date"><em>August 23, 2018</em></h4>
 
 </div>
 
 
-<p>This in-class lab should be completed in your group. The purpose of this lab is to familiarize yourself with R and RStudio.</p>
+<p>The purpose of this in-class lab is to familiarize yourself with R and RStudio. The lab should be completed in your group. To get credit, upload your .R script to the appropriate place on Canvas.</p>
 <div id="first-steps" class="section level2">
 <h2>First steps</h2>
 <ol style="list-style-type: decimal">
@@ -174,7 +175,7 @@ library(wooldridge)</code></pre>
 <h3>Loading data</h3>
 <p>We’re going to load a data set from the <code>wooldridge</code> package. The data set is called <code>wage1</code>.</p>
 <pre class="r"><code>df &lt;- as_tibble(wage1)</code></pre>
-<p>What we did there was convert it to a <code>tibble</code>, which is a nice format for data sets (see Ch. 10 of <span class="citation">Wickham and Grolemund (2017)</span>). We called the converted tibble <code>df</code>.</p>
+<p>What we did there was convert it to a <code>tibble</code>, which is a nice format for data sets (see Ch. 10 of <span class="citation">Wickham and Grolemund (2017)</span>). We called the converted tibble <code>df</code>, but you can call it whatever you want: <code>mydata</code>, <code>data123</code>, whatever.</p>
 </div>
 <div id="browsing" class="section level3">
 <h3>Browsing</h3>
@@ -203,7 +204,24 @@ library(wooldridge)</code></pre>
 <pre class="r"><code>df &lt;- df %&gt;% mutate(realwage=wage*4.53)
 summary(df$realwage)</code></pre>
 <p>You can verify that <code>realwage</code> got added to <code>df</code> by clicking on the preview of <code>df</code> and scrolling all the way over to the right.</p>
-<p>For more information on <code>mutate()</code>, see section 5.5 of <span class="citation">Wickham and Grolemund (2017)</span>.</p>
+<p>For more information on <code>mutate()</code>, see section 5.5 of <span class="citation">Wickham and Grolemund (2017)</span>. You can also drop a variable by typing <code>df &lt;- df %&gt;% mutate(realwage=NULL)</code></p>
+</div>
+<div id="dropping-observations" class="section level3">
+<h3>Dropping observations</h3>
+<p>Suppose we want to get rid of all men in our data. (For example, maybe we’re doing research on women’s labor force participation.) To do this, we use the <code>filter()</code> function.</p>
+<p>To use <code>filter()</code>, you provide conditions for <em>keeping</em> a specific observation. Add the following to your script:</p>
+<pre class="r"><code>summary(df$female)
+df &lt;- df %&gt;% filter(female==1)
+summary(df$female)</code></pre>
+<p>We told R to keep observations where <code>female</code> equals 1. You can see that, prior to the <code>filter()</code> statement, women were 48% of the data. Now, they are 100%. We can thus verify that <code>filter()</code> did what we asked it to.</p>
+</div>
+<div id="missing-values" class="section level3">
+<h3>Missing values</h3>
+<p>A common occurrence in cross-sectional observational data is missing values. For example, someone leaves blank a question in a survey. Or the wage of someone who is unemployed is not defined. In R, missing values are stored as <code>NA</code> (meaning “not applicable”). To drop <code>NA</code> observations, use the <code>is.na</code> condtion:</p>
+<pre class="r"><code>summary(df$wage)
+df &lt;- df %&gt;% filter(!is.na(wage))
+summary(df$wage)</code></pre>
+<p>In this case, we want R to keep <em>non-missing</em> wage observations, so we put <code>!</code> in front. <code>!</code> is generally accepted notation for logical negation, i.e. <code>!TRUE</code> equals <code>FALSE</code>.</p>
 </div>
 </div>
 <div id="references" class="section level1 unnumbered">
