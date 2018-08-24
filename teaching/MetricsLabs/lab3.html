@@ -161,7 +161,7 @@ beta0 &lt;- mean(df$math10)-beta1*mean(df$expend)</code></pre>
 </div>
 <div id="visualizing-regression-estimates" class="section level2">
 <h2>Visualizing Regression Estimates</h2>
-<p>Often, it’s helpful to visualize your regression model. We can do this with the following code:</p>
+<p>Often, it’s helpful to visualize the estimated regression model. <span class="citation">Wooldridge (2015)</span> calls this the “Sample Regression Function.” We can do this with the following code:</p>
 <pre class="r"><code>ggplot(df,aes(expend,math10)) +
     geom_point() +
     geom_smooth(method='lm')</code></pre>
@@ -201,7 +201,14 @@ sumx2 &lt;- sum(df$logexpend^2)</code></pre>
 <pre class="r"><code>sqrt((sig^2*(1/n)*sumx2)/SSTx)</code></pre>
 <p>And the standard error of the slope coefficient (<code>logexpend</code> in this case) is:</p>
 <pre class="r"><code>sqrt(sig^2/SSTx)</code></pre>
-<!--- # References --->
+</div>
+<div id="references" class="section level1 unnumbered">
+<h1>References</h1>
+<div id="refs" class="references">
+<div id="ref-wooldridge">
+<p>Wooldridge, Jeffrey M. 2015. <em>Introductory Econometrics: A Modern Approach</em>. 6th ed. Cengage Learning.</p>
+</div>
+</div>
 </div>
 
 
