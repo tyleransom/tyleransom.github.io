@@ -1,6 +1,6 @@
 ---
 title: "In-class Lab 1"
-author: "ECON 4223"
+author: "ECON 4223 (Prof. Tyler Ransom, U of Oklahoma)"
 date: "August 23, 2018"
 output:
   pdf_document: default
@@ -80,7 +80,7 @@ df <- as_tibble(wage1)
 What we did there was convert it to a `tibble`, which is a nice format for data sets (see Ch. 10 of @r4ds). We called the converted tibble `df`, but you can call it whatever you want: `mydata`, `data123`, whatever.
 
 ### Browsing
-If you re-run your script (by clicking `Source`), you'll see something new in the "Environment" window (top-right). It says `df` under the "Data" heading. 
+If you re-run your script (by clicking `Source` ... or better yet, click on the little arrow next to `Source` which opens a menu that you can click `Source with echo`), you'll see something new in the "Environment" window (top-right). It says `df` under the "Data" heading. 
 
 Double-click on `df` in the Environment window. This will show you your data in a format similar to an Excel spreadsheet. You can use this to easily scan the data to make sure things look reasonable.
 
