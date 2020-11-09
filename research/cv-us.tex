@@ -1,0 +1,179 @@
+% LaTeX Curriculum Vitae Template
+%
+% Copyright (C) 2004-2009 Jason Blevins <jrblevin@sdf.lonestar.org>
+% http://jblevins.org/projects/cv-template/
+%
+% You may use use this document as a template to create your own CV
+% and you may redistribute the source code freely. No attribution is
+% required in any resulting documents. I do ask that you please leave
+% this notice and the above URL in the source code if you choose to
+% redistribute this file.
+
+\documentclass[letterpaper]{article}
+\usepackage{bm}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage{csquotes}
+% Comment the following lines to use the default Computer Modern font
+% instead of the Palatino font provided by the mathpazo package.
+% Remove the 'osf' bit if you don't like the old style figures.
+\usepackage[T1]{fontenc}
+\usepackage[sc,osf]{mathpazo}
+
+% Set your name here
+\def\name{Chengyan Zhao}
+
+% Replace this with a link to your CV if you like, or set it empty
+% (as in \def\footerlink{}) to remove the link in the footer:
+\def\footerlink{http://jblevins.org/projects/cv-template/}
+
+% The following metadata will show up in the PDF properties
+\hypersetup{
+  colorlinks = true,
+  urlcolor = black,
+  pdfauthor = {\name},
+  pdfkeywords = {economics, statistics, mathematics},
+  pdftitle = {\name: Curriculum Vitae},
+  pdfsubject = {Curriculum Vitae},
+  pdfpagemode = UseNone
+}
+
+\geometry{
+  body={6.5in, 8.5in},
+  left=1.0in,
+  top=1.25in
+}
+
+% Customize page headers
+\pagestyle{myheadings}
+\markright{\name}
+\thispagestyle{empty}
+
+% Custom section fonts
+\usepackage{sectsty}
+\sectionfont{\rmfamily\mdseries\Large}
+\subsectionfont{\rmfamily\mdseries\itshape\large}
+
+% Other possible font commands include:
+% \ttfamily for teletype,
+% \sffamily for sans serif,
+% \bfseries for bold,
+% \scshape for small caps,
+% \normalsize, \large, \Large, \LARGE sizes.
+
+% Don't indent paragraphs.
+\setlength\parindent{0em}
+
+% Make lists without bullets
+\renewenvironment{itemize}{
+  \begin{list}{}{
+    \setlength{\leftmargin}{0em}
+  }
+}{
+  \end{list}
+}
+
+\begin{document}
+
+% Place name at left
+{\huge Chengyan Zhao }
+
+% Alternatively, print name centered and bold:
+%\centerline{\huge \bf \name}
+
+\vspace{0.25in}
+
+\begin{minipage}{0.45\linewidth}
+  \href{}{8916-5 Takayama\\
+  	Graduate School of Information Science\\
+  	Nara Institute of Science and Technology \\
+ Ikoma, Nara 630-0192, Japan \\}
+\end{minipage}
+\begin{minipage}{0.45\linewidth}
+  \begin{tabular}{ll}
+    Tel: & (+81) 0743-72-5356 \\
+    Email: & \href{mailto:zhao.chengyan.za5@is.naist.jp}{\tt zhao.chengyan.za5@is.naist.jp} \\
+    Homepage: & \href{https://chengyanfox.github.io/}{\tt https://chengyanfox.github.io} \\
+    Citizenship: &Chinese
+  \end{tabular}
+\end{minipage}
+
+\section*{AREAS OF EXPERTISE}
+
+\begin{itemize}
+	\item Positive systems, Switched linear systems, Complex networks, Convex optimization, Deep learning.
+\end{itemize}
+
+\section*{EDUCATION}
+
+\begin{itemize}
+  \item Apr 2018- \hspace{6.9em}Ph.D. candidate in Information Science, \textit{Nara Institute of Science and Technology}
+  \item Oct 2017-Mar 2018 \hspace{3em}Research student, \textit{University of Tokyo}
+  
+   \item Sep 2011-July 2013 \hspace{3em}M.Eng. in Control Engineer,  \textit{Northeastern University (China)}
+   
+  \item Sep 2007-July 2011 \hspace{3em}B.Eng. in Automatic Control,  \textit{Northeastern University (China)} 
+\end{itemize}
+
+
+\section*{AWARDS}
+
+\begin{itemize}
+\item Sep 2017-Mar 2021 \hspace{2.9em}Japanese Government (MEXT) Scholarships
+\item Nov 2019 \hspace{7.0em}Overseas Dispatch Program (NAIST)
+\end{itemize}
+
+\section*{SHORT TERM VISITS}
+
+\begin{itemize}
+	\item Jan 2020-Feb 2020 \hspace{3.1em}Department of Mechanical Engineering, University of Hong Kong
+	
+\end{itemize}
+
+\section*{PUBLICATIONS}
+
+\subsection*{Journal Articles}
+
+\begin{enumerate}[label={[\arabic*]}, noitemsep]
+\item C. Zhao, M. Ogura, and K. Sugimoto, \enquote{Stability optimization of positive semi-Markov jump linear systems via convex optimization}, {\it SICE Journal of Control, Measurement, and System Integration, vol. 13, no. 5, pp. 233-239, 2020.}\\
+
+\item W. Mei, C. Zhao, M. Ogura, and K. Sugimoto, \enquote{Mixed $H_2$/$H_{\infty}$ control for Markov jump linear systems with state and mode-observation delays}, {\it IET Control Theory and Applications, vol. 14, no. 15, pp. 2076-2083, 2020.}\\
+
+\item C. Zhao, M. Ogura, M. Kishida, and A. Yassine, \enquote{Optimal resource allocation for dynamic product development process via convex optimization}, {\it Research in Engineering Design, 2020.}  \\
+
+%\item C. Zhao, J. Xiao \enquote{Deep learning based state estimation of uncertain large-scale complex networks}, {\it Prepared for submission}.\\
+
+%\item C. Zhao, M. Ogura, K. Sugimoto, \enquote{Log-log convexity of optimal control problem for positive linear systems}, Prepared for submission{\it }.
+\end{enumerate}
+
+\subsection*{Conference Proceedings}
+
+\begin{enumerate}[label={[\arabic*]}, noitemsep]
+\item L. Wang, C. Zhao, W. Cui, \enquote{Unmodeled dynamics and data-driven balance control for a class of underactuated mechanical systems,} {\it in Proceedings of the 2013 International Conference on Advanced Mechatronic Systems}, 2013, pp. 594-597.\\
+
+\item C. Zhao, M. Ogura, K. Sugimoto, \enquote{Finite-time control of  discrete-time positive linear system via convex optimization,}  {\it SICE Annual Conference, 2020, Chiang Mai, Thailand (Online)}, pp. 1230-1235. 
+\end{enumerate}
+
+\section*{RESEARCH \& TEACHING SERVICE}
+\begin{enumerate}[label={[\arabic*]}, noitemsep]
+\item Sep 2018-\hspace{5.4em} Research Assistant.
+\item Sep 2019-Feb 2020 \hspace{1.3em} Teaching Assistant (Japanese Culture).
+\end{enumerate}
+
+\section*{PROFESSIONAL SERVICE}
+\textbf{Journal reviewer:} RAIRO - Operations Research; Journal of The Franklin Institute;
+
+
+\bigskip
+
+% Footer
+\begin{center}
+  \begin{footnotesize}
+    Last updated: \today \\
+   % \href{\footerlink}{\texttt{\footerlink}}
+  \end{footnotesize}
+\end{center}
+
+\end{document}
