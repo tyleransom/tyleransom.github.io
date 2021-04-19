@@ -11,7 +11,7 @@
 
 <meta name="author" content="ECON 4223 (Prof. Tyler Ransom, U of Oklahoma)" />
 
-<meta name="date" content="2020-09-03" />
+<meta name="date" content="2021-02-04" />
 
 <title>In-class Lab 3</title>
 
@@ -1636,7 +1636,7 @@ summary {
 
 <h1 class="title toc-ignore">In-class Lab 3</h1>
 <h4 class="author">ECON 4223 (Prof. Tyler Ransom, U of Oklahoma)</h4>
-<h4 class="date">September 3, 2020</h4>
+<h4 class="date">February 4, 2021</h4>
 
 </div>
 
@@ -1646,6 +1646,7 @@ summary {
 <h2>For starters</h2>
 <p>Open up a new R script (named <code>ICL3_XYZ.R</code>, where <code>XYZ</code> are your initials) and add the usual “preamble” to the top:</p>
 <pre class="r"><code>library(tidyverse)
+library(modelsummary)
 library(broom)
 library(wooldridge)</code></pre>
 <p>For this lab, let’s use data on school expenditures and math test pass rates from Michigan. This is located in the <code>meap93</code> data set in the <code>wooldridge</code> package. Each observation is a school district in Michigan.</p>
@@ -1689,6 +1690,7 @@ beta0 &lt;- mean(df$math10)-beta1*mean(df$expend)</code></pre>
 <pre class="r"><code>est &lt;- lm(math10 ~ logexpend, data=df)
 tidy(est)
 glance(est)
+modelsummary(est)
 
 ggplot(df,aes(logexpend,math10)) +
     geom_point() +

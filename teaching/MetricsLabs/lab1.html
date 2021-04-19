@@ -11,7 +11,7 @@
 
 <meta name="author" content="ECON 4223 (Prof. Tyler Ransom, U of Oklahoma)" />
 
-<meta name="date" content="2020-08-27" />
+<meta name="date" content="2021-01-26" />
 
 <title>In-class Lab 1</title>
 
@@ -1636,7 +1636,7 @@ summary {
 
 <h1 class="title toc-ignore">In-class Lab 1</h1>
 <h4 class="author">ECON 4223 (Prof. Tyler Ransom, U of Oklahoma)</h4>
-<h4 class="date">August 27, 2020</h4>
+<h4 class="date">January 26, 2021</h4>
 
 </div>
 
@@ -1661,11 +1661,11 @@ summary {
 <h3>Packages</h3>
 <p>R makes extensive use of third-party packages. We won’t get into the details right now, but for this class, you will need to install a few of these. Installing packages is quite easy. Type the following two lines of code at the very top of your script:</p>
 <pre class="r"><code>install.packages(&quot;tidyverse&quot;, repos=&#39;http://cran.us.r-project.org&#39;)
-install.packages(&quot;vtable&quot;, repos=&#39;http://cran.us.r-project.org&#39;)
+install.packages(&quot;modelsummary&quot;, repos=&#39;http://cran.us.r-project.org&#39;)
 install.packages(&quot;wooldridge&quot;, repos=&#39;http://cran.us.r-project.org&#39;)</code></pre>
 <p>You’ve just installed three packages. Basically, you’ve downloaded them onto your computer. Just like with other software on your computer, you only need to do the installation once. However, you still need to tell R that you will be using the packages. Add the following two lines of code to your script (below the first two lines you wrote). Notice how there are no quotation marks inside the parentheses this time.</p>
 <pre class="r"><code>library(tidyverse)
-library(vtable)
+library(modelsummary)
 library(wooldridge)</code></pre>
 </div>
 <div id="running-a-script" class="section level3">
@@ -1677,7 +1677,7 @@ library(wooldridge)</code></pre>
 <h3>Commenting</h3>
 <p>Now, put a hashtag (#) in front of the first two lines of code in your script, like so:</p>
 <pre class="r"><code>#install.packages(&quot;tidyverse&quot;)
-#install.packages(&quot;vtable&quot;)
+#install.packages(&quot;modelsummary&quot;)
 #install.packages(&quot;wooldridge&quot;)</code></pre>
 <p>The hashtag is how you tell R not to run the code in your script. This is known as “commenting” your code.</p>
 <p>At the very top of your script, type your name with a hashtag in front.</p>
@@ -1701,12 +1701,12 @@ library(wooldridge)</code></pre>
 <div id="summary-statistics" class="section level3">
 <h3>Summary statistics</h3>
 <p>Let’s look at the summary statistics of one of our variables. Suppose we want to know: What is the average years of education in our sample?</p>
-<pre class="r"><code>sumtable(df) #then look at &#39;educ&#39; column</code></pre>
+<pre class="r"><code>datasummary_skim(df) #then look at &#39;educ&#39; column</code></pre>
 <p>In your script, write the value of the Mean of <code>educ</code>, preceded by a comment (the hashtag symbol)</p>
 <p>What fraction of the sample is composed of women?</p>
 <pre class="r"><code>mean(df$female)
 # or
-sumtable(df) #then look at &#39;female&#39; column</code></pre>
+datasummary_skim(df) #then look at &#39;female&#39; column</code></pre>
 </div>
 <div id="visualization" class="section level3">
 <h3>Visualization</h3>
@@ -1720,7 +1720,7 @@ sumtable(df) #then look at &#39;female&#39; column</code></pre>
 <p>Suppose you want to add a new variable to <code>df</code>. For example, the wage variable is expressed in 1976 dollars, and you want to know what the wage would be in today’s dollars. (Note: the CPI implies that $1.00 in 1976 equals $4.53 today)</p>
 <pre class="r"><code>df &lt;- df %&gt;% mutate(realwage=wage*4.53)
 summary(df$realwage)
-sumtable(df) # then look at realwage column</code></pre>
+datasummary_skim(df) # then look at realwage column</code></pre>
 <p>You can verify that <code>realwage</code> got added to <code>df</code> by clicking on the preview of <code>df</code> and scrolling all the way over to the right.</p>
 <p>For more information on <code>mutate()</code>, see section 5.5 of <span class="citation">Wickham and Grolemund (2017)</span>. You can also drop a variable by typing <code>df &lt;- df %&gt;% mutate(realwage=NULL)</code></p>
 </div>

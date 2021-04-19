@@ -11,7 +11,7 @@
 
 <meta name="author" content="ECON 4223 (Prof. Tyler Ransom, U of Oklahoma)" />
 
-<meta name="date" content="2020-09-10" />
+<meta name="date" content="2021-02-11" />
 
 <title>In-Class Lab 5</title>
 
@@ -1636,7 +1636,7 @@ summary {
 
 <h1 class="title toc-ignore">In-Class Lab 5</h1>
 <h4 class="author">ECON 4223 (Prof. Tyler Ransom, U of Oklahoma)</h4>
-<h4 class="date">September 10, 2020</h4>
+<h4 class="date">February 11, 2021</h4>
 
 </div>
 
@@ -1645,10 +1645,10 @@ summary {
 <div id="for-starters" class="section level2">
 <h2>For starters</h2>
 <p>Open up a new R script (named <code>ICL5_XYZ.R</code>, where <code>XYZ</code> are your initials) and add the usual “preamble” to the top:</p>
-<pre class="r"><code># Add names of group members HERE
-library(tidyverse)
+<pre class="r"><code>library(tidyverse)
 library(broom)
-library(wooldridge)</code></pre>
+library(wooldridge)
+library(modelsummary)</code></pre>
 <p>Also install the package <code>car</code> by typing <strong>in the console</strong>:</p>
 <pre class="r"><code>install.packages(&quot;car&quot;, repos=&#39;http://cran.us.r-project.org&#39;)</code></pre>
 <p>and then add to the preamble of your script</p>
@@ -1659,7 +1659,11 @@ library(wooldridge)</code></pre>
 <p>We’ll use a new data set on wages, called <code>wage2</code>.</p>
 <pre class="r"><code>df &lt;- as_tibble(wage2)</code></pre>
 <p>Check out what’s in the data by typing</p>
-<pre class="r"><code>glimpse(df)</code></pre>
+<pre class="r"><code>glimpse(df)
+# or, equivalently
+datasummary_df(df)</code></pre>
+<p>We can also look at summary statistics in the data by typing</p>
+<pre class="r"><code>datasummary_skim(df,histogram=FALSE)</code></pre>
 </div>
 </div>
 <div id="properties-of-omitted-variables" class="section level2">
@@ -1680,6 +1684,10 @@ tidy(est3)
 est2$coefficients[&quot;educ&quot;] == est3$coefficients[&quot;educ&quot;] +
     est3$coefficients[&quot;IQ&quot;]*est1$coefficients[&quot;educ&quot;]</code></pre>
 <p>(The last line returns <code>TRUE</code> if the equality holds and <code>FALSE</code> if it doesn’t hold.)</p>
+<p>We can also look at the output with <code>modelsummary()</code>:</p>
+<pre class="r"><code>modelsummary(
+             list(est1,est2,est3)
+            )</code></pre>
 <p>Is <span class="math inline">\(\widetilde{\beta}_1\)</span> larger or smaller than <span class="math inline">\(\hat{\beta}_1\)</span>? What does this mean in terms of omitted variable bias?</p>
 </div>
 <div id="multicollinearity" class="section level2">

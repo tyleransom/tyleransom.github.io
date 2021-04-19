@@ -11,7 +11,7 @@
 
 <meta name="author" content="ECON 4223 (Prof. Tyler Ransom, U of Oklahoma)" />
 
-<meta name="date" content="2020-09-08" />
+<meta name="date" content="2021-02-09" />
 
 <title>In-Class Lab 4</title>
 
@@ -1636,7 +1636,7 @@ summary {
 
 <h1 class="title toc-ignore">In-Class Lab 4</h1>
 <h4 class="author">ECON 4223 (Prof. Tyler Ransom, U of Oklahoma)</h4>
-<h4 class="date">September 8, 2020</h4>
+<h4 class="date">February 9, 2021</h4>
 
 </div>
 
@@ -1648,11 +1648,14 @@ summary {
 <pre class="r"><code># Add names of group members HERE
 library(tidyverse)
 library(broom)
-library(wooldridge)</code></pre>
+library(wooldridge)
+library(modelsummary)</code></pre>
 <p>For this lab, let’s use data on house prices. This is located in the <code>hprice1</code> data set in the <code>wooldridge</code> package. Each observation is a house.</p>
 <pre class="r"><code>df &lt;- as_tibble(hprice1)</code></pre>
 <p>Check out what’s in <code>df</code> by typing</p>
-<pre class="r"><code>glimpse(hprice1)</code></pre>
+<pre class="r"><code>glimpse(df)</code></pre>
+<p>Or for some summary statistics:</p>
+<pre class="r"><code>datasummary_skim(df,histogram=FALSE)</code></pre>
 </div>
 <div id="multiple-regression" class="section level2">
 <h2>Multiple Regression</h2>
@@ -1660,13 +1663,12 @@ library(wooldridge)</code></pre>
 price = \beta_0 + \beta_1 sqrft + \beta_2 bdrms + u
 \]</span> where <span class="math inline">\(price\)</span> is the house price in thousands of dollars.</p>
 <p>The code to do so is:</p>
-<pre class="r"><code>est &lt;- lm(price ~ sqrft + bdrms, data=df)
-tidy(est)
-glance(est)</code></pre>
+<pre class="r"><code>est1 &lt;- lm(price ~ sqrft + bdrms, data=df)
+modelsummary(est1)</code></pre>
 <p>You should get a coefficient of <code>0.128</code> on <code>sqrft</code> and <code>15.2</code> on <code>bdrms</code>. Interpret these coefficients. (You can type the interpretation as a comment in your .R script.) Do these numbers seem reasonable?</p>
 <p>You should get <span class="math inline">\(R^2 = 0.632\)</span>. Based on that number, do you think this is a good model of house prices?</p>
 <p>Check that the average of the residuals is zero:</p>
-<pre class="r"><code>mean(est$residuals)</code></pre>
+<pre class="r"><code>mean(est1$residuals)</code></pre>
 </div>
 <div id="adding-in-non-linearities" class="section level2">
 <h2>Adding in non-linearities</h2>
@@ -1675,9 +1677,8 @@ glance(est)</code></pre>
 <p>First, let’s use <code>mutate()</code> to add these new variables:</p>
 <pre class="r"><code>df &lt;- df %&gt;% mutate(logprice = log(price), sqrftSq = sqrft^2, bdrmSq = bdrms^2)</code></pre>
 <p>Now run the new model:</p>
-<pre class="r"><code>est &lt;- lm(logprice ~ sqrft + sqrftSq + bdrms + bdrmSq, data=df)
-tidy(est)
-glance(est)</code></pre>
+<pre class="r"><code>est2 &lt;- lm(logprice ~ sqrft + sqrftSq + bdrms + bdrmSq, data=df)
+modelsummary(est2)</code></pre>
 <p>The new coefficients have much smaller magnitudes. Explain why that might be.</p>
 <p>The new <span class="math inline">\(R^2 = 0.595\)</span> which is less than <span class="math inline">\(0.632\)</span> from before. Does that mean this model is worse?</p>
 </div>
@@ -1691,7 +1692,7 @@ glance(est)</code></pre>
 df &lt;- df %&gt;% mutate(sqrft.resid = est$residuals)</code></pre>
 <p>Now, if we run a simple regression of <code>logprice</code> on <code>sqrft.resid</code> we should get the same coefficient as that of <code>sqrft</code> in the original regression (=<code>3.74e-4</code>).</p>
 <pre class="r"><code>est &lt;- lm(logprice ~ sqrft.resid, data=df)
-tidy(est)</code></pre>
+modelsummary(est)</code></pre>
 </div>
 <div id="frisch-waugh-by-hand" class="section level2">
 <h2>Frisch-Waugh by hand</h2>

@@ -11,7 +11,7 @@
 
 <meta name="author" content="ECON 4223 (Prof. Tyler Ransom, U of Oklahoma)" />
 
-<meta name="date" content="2020-09-17" />
+<meta name="date" content="2021-02-23" />
 
 <title>In-Class Lab 7</title>
 
@@ -1636,12 +1636,12 @@ summary {
 
 <h1 class="title toc-ignore">In-Class Lab 7</h1>
 <h4 class="author">ECON 4223 (Prof. Tyler Ransom, U of Oklahoma)</h4>
-<h4 class="date">September 17, 2020</h4>
+<h4 class="date">February 23, 2021</h4>
 
 </div>
 
 
-<p>The purpose of this in-class lab is to practice conducting hypothesis tests about regression parameters in R. The lab should be completed in your group. To get credit, upload your .R script to the appropriate place on Canvas.</p>
+<p>The purpose of this in-class lab is to practice conducting hypothesis tests about regression parameters in R. The lab may be completed in a group. To get credit, upload your .R script to the appropriate place on Canvas.</p>
 <div id="for-starters" class="section level2">
 <h2>For starters</h2>
 <p>Open up a new R script (named <code>ICL7_XYZ.R</code>, where <code>XYZ</code> are your initials) and add the usual “preamble” to the top:</p>
@@ -1649,13 +1649,15 @@ summary {
 library(tidyverse)
 library(broom)
 library(wooldridge)
-library(magrittr)</code></pre>
+library(magrittr)
+library(modelsummary)</code></pre>
 <div id="load-the-data" class="section level3">
 <h3>Load the data</h3>
 <p>We’ll use a new data set on Research and Development (R&amp;D) expenditures, called <code>rdchem</code>. The data set contains information on 32 companies in the chemical industry.</p>
 <pre class="r"><code>df &lt;- as_tibble(rdchem)</code></pre>
 <p>Check out what’s in the data by typing</p>
-<pre class="r"><code>glimpse(df)</code></pre>
+<pre class="r"><code>datasummary_df(df)
+datasummary_skim(df,histogram=FALSE)</code></pre>
 <p>The main variables are measures of R&amp;D, profits, sales, and profits as a percentage of sales (<code>profmarg</code>, i.e. profit margin).</p>
 </div>
 </div>

@@ -11,7 +11,7 @@
 
 <meta name="author" content="ECON 4223 (Prof. Tyler Ransom, U of Oklahoma)" />
 
-<meta name="date" content="2020-10-01" />
+<meta name="date" content="2021-03-09" />
 
 <title>In-Class Lab 10</title>
 
@@ -48,6 +48,15 @@ if (!!window.navigator.userAgent.match("MSIE 8")) {
 !function(a){"use strict";a.matchMedia=a.matchMedia||function(a){var b,c=a.documentElement,d=c.firstElementChild||c.firstChild,e=a.createElement("body"),f=a.createElement("div");return f.id="mq-test-1",f.style.cssText="position:absolute;top:-100em",e.style.background="none",e.appendChild(f),function(a){return f.innerHTML='&shy;<style media="'+a+'"> #mq-test-1 { width: 42px; }</style>',c.insertBefore(e,d),b=42===f.offsetWidth,c.removeChild(e),{matches:b,media:a}}}(a.document)}(this),function(a){"use strict";function b(){u(!0)}var c={};a.respond=c,c.update=function(){};var d=[],e=function(){var b=!1;try{b=new a.XMLHttpRequest}catch(c){b=new a.ActiveXObject("Microsoft.XMLHTTP")}return function(){return b}}(),f=function(a,b){var c=e();c&&(c.open("GET",a,!0),c.onreadystatechange=function(){4!==c.readyState||200!==c.status&&304!==c.status||b(c.responseText)},4!==c.readyState&&c.send(null))};if(c.ajax=f,c.queue=d,c.regex={media:/@media[^\{]+\{([^\{\}]*\{[^\}\{]*\})+/gi,keyframes:/@(?:\-(?:o|moz|webkit)\-)?keyframes[^\{]+\{(?:[^\{\}]*\{[^\}\{]*\})+[^\}]*\}/gi,urls:/(url\()['"]?([^\/\)'"][^:\)'"]+)['"]?(\))/g,findStyles:/@media *([^\{]+)\{([\S\s]+?)$/,only:/(only\s+)?([a-zA-Z]+)\s?/,minw:/\([\s]*min\-width\s*:[\s]*([\s]*[0-9\.]+)(px|em)[\s]*\)/,maxw:/\([\s]*max\-width\s*:[\s]*([\s]*[0-9\.]+)(px|em)[\s]*\)/},c.mediaQueriesSupported=a.matchMedia&&null!==a.matchMedia("only all")&&a.matchMedia("only all").matches,!c.mediaQueriesSupported){var g,h,i,j=a.document,k=j.documentElement,l=[],m=[],n=[],o={},p=30,q=j.getElementsByTagName("head")[0]||k,r=j.getElementsByTagName("base")[0],s=q.getElementsByTagName("link"),t=function(){var a,b=j.createElement("div"),c=j.body,d=k.style.fontSize,e=c&&c.style.fontSize,f=!1;return b.style.cssText="position:absolute;font-size:1em;width:1em",c||(c=f=j.createElement("body"),c.style.background="none"),k.style.fontSize="100%",c.style.fontSize="100%",c.appendChild(b),f&&k.insertBefore(c,k.firstChild),a=b.offsetWidth,f?k.removeChild(c):c.removeChild(b),k.style.fontSize=d,e&&(c.style.fontSize=e),a=i=parseFloat(a)},u=function(b){var c="clientWidth",d=k[c],e="CSS1Compat"===j.compatMode&&d||j.body[c]||d,f={},o=s[s.length-1],r=(new Date).getTime();if(b&&g&&p>r-g)return a.clearTimeout(h),h=a.setTimeout(u,p),void 0;g=r;for(var v in l)if(l.hasOwnProperty(v)){var w=l[v],x=w.minw,y=w.maxw,z=null===x,A=null===y,B="em";x&&(x=parseFloat(x)*(x.indexOf(B)>-1?i||t():1)),y&&(y=parseFloat(y)*(y.indexOf(B)>-1?i||t():1)),w.hasquery&&(z&&A||!(z||e>=x)||!(A||y>=e))||(f[w.media]||(f[w.media]=[]),f[w.media].push(m[w.rules]))}for(var C in n)n.hasOwnProperty(C)&&n[C]&&n[C].parentNode===q&&q.removeChild(n[C]);n.length=0;for(var D in f)if(f.hasOwnProperty(D)){var E=j.createElement("style"),F=f[D].join("\n");E.type="text/css",E.media=D,q.insertBefore(E,o.nextSibling),E.styleSheet?E.styleSheet.cssText=F:E.appendChild(j.createTextNode(F)),n.push(E)}},v=function(a,b,d){var e=a.replace(c.regex.keyframes,"").match(c.regex.media),f=e&&e.length||0;b=b.substring(0,b.lastIndexOf("/"));var g=function(a){return a.replace(c.regex.urls,"$1"+b+"$2$3")},h=!f&&d;b.length&&(b+="/"),h&&(f=1);for(var i=0;f>i;i++){var j,k,n,o;h?(j=d,m.push(g(a))):(j=e[i].match(c.regex.findStyles)&&RegExp.$1,m.push(RegExp.$2&&g(RegExp.$2))),n=j.split(","),o=n.length;for(var p=0;o>p;p++)k=n[p],l.push({media:k.split("(")[0].match(c.regex.only)&&RegExp.$2||"all",rules:m.length-1,hasquery:k.indexOf("(")>-1,minw:k.match(c.regex.minw)&&parseFloat(RegExp.$1)+(RegExp.$2||""),maxw:k.match(c.regex.maxw)&&parseFloat(RegExp.$1)+(RegExp.$2||"")})}u()},w=function(){if(d.length){var b=d.shift();f(b.href,function(c){v(c,b.href,b.media),o[b.href]=!0,a.setTimeout(function(){w()},0)})}},x=function(){for(var b=0;b<s.length;b++){var c=s[b],e=c.href,f=c.media,g=c.rel&&"stylesheet"===c.rel.toLowerCase();e&&g&&!o[e]&&(c.styleSheet&&c.styleSheet.rawCssText?(v(c.styleSheet.rawCssText,e,f),o[e]=!0):(!/^([a-zA-Z:]*\/\/)/.test(e)&&!r||e.replace(RegExp.$1,"").split("/")[0]===a.location.host)&&("//"===e.substring(0,2)&&(e=a.location.protocol+e),d.push({href:e,media:f})))}w()};x(),c.update=x,c.getEmValue=t,a.addEventListener?a.addEventListener("resize",b,!1):a.attachEvent&&a.attachEvent("onresize",b)}}(this);
 };
 </script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
 <script>
 
 /**
@@ -1481,12 +1490,16 @@ window.onload = function() {
 };
 </script>
 
-<style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
-  pre:not([class]) {
-    background-color: white;
-  }
-</style>
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
 <script type="text/javascript">
 if (window.hljs) {
   hljs.configure({languages: []});
@@ -1499,32 +1512,7 @@ if (window.hljs) {
 
 
 
-<style type="text/css">
-h1 {
-  font-size: 34px;
-}
-h1.title {
-  font-size: 38px;
-}
-h2 {
-  font-size: 30px;
-}
-h3 {
-  font-size: 24px;
-}
-h4 {
-  font-size: 18px;
-}
-h5 {
-  font-size: 16px;
-}
-h6 {
-  font-size: 12px;
-}
-.table th:not([align]) {
-  text-align: left;
-}
-</style>
+
 
 
 
@@ -1534,10 +1522,6 @@ h6 {
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
-}
-code {
-  color: inherit;
-  background-color: rgba(0, 0, 0, 0.04);
 }
 img {
   max-width:100%;
@@ -1554,6 +1538,9 @@ button.code-folding-btn:focus {
 summary {
   display: list-item;
 }
+pre code {
+  padding: 0;
+}
 </style>
 
 
@@ -1566,7 +1553,6 @@ summary {
   max-height: 500px;
   min-height: 44px;
   overflow-y: auto;
-  background: white;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
@@ -1630,13 +1616,13 @@ summary {
 
 
 
-<div class="fluid-row" id="header">
+<div id="header">
 
 
 
 <h1 class="title toc-ignore">In-Class Lab 10</h1>
 <h4 class="author">ECON 4223 (Prof. Tyler Ransom, U of Oklahoma)</h4>
-<h4 class="date">October 1, 2020</h4>
+<h4 class="date">March 9, 2021</h4>
 
 </div>
 
@@ -1644,11 +1630,12 @@ summary {
 <p>The purpose of this in-class lab is to use R to practice estimating time series regression models with standard errors corrected for heteroskedasticity and serial correlation (HAC). To get credit, upload your .R script to the appropriate place on Canvas.</p>
 <div id="for-starters" class="section level2">
 <h2>For starters</h2>
-<p>First, install the <code>pdfetch</code>, <code>tsibble</code>, <code>sandwich</code>, and <code>COVID19</code> packages. <code>pdfetch</code> stands for “Public Data Fetch” and is a slick way of downloading statistics on stock prices, GDP, inflation, unemployment, etc. <code>tsibble</code> is a package useful for working with time series data. It is the “tibble” for time series data. <code>sandiwch</code> is helpful for obtaining HAC standard errors. <code>COVID19</code> pulls up-to-date data on COVID-19 cases, deaths, etc.</p>
+<p>First, install the <code>pdfetch</code>, <code>tsibble</code>, <code>sandwich</code>, and <code>COVID19</code> packages. <code>pdfetch</code> stands for “Public Data Fetch” and is a slick way of downloading statistics on stock prices, GDP, inflation, unemployment, etc. <code>tsibble</code> is a package useful for working with time series data. It is the “tibble” for time series data. <code>sandwich</code> is helpful for obtaining HAC standard errors. <code>COVID19</code> pulls up-to-date data on COVID-19 cases, deaths, etc.</p>
 <p>Open up a new R script (named <code>ICL10_XYZ.R</code>, where <code>XYZ</code> are your initials) and add the usual “preamble” to the top:</p>
 <pre class="r"><code># Add names of group members HERE
 library(tidyverse)
 library(wooldridge)
+library(modelsummary)
 library(broom)
 library(car)
 library(pdfetch)
@@ -1676,12 +1663,12 @@ df.ts &lt;- as_tsibble(df, key=id, index=date)</code></pre>
 ggplot(df.ts, aes(date, new_cases)) + geom_line()</code></pre>
 <pre><code>## Warning: Removed 1 row(s) containing missing values (geom_path).</code></pre>
 <pre class="r"><code>ggplot(df.ts, aes(date, new_deaths)) + geom_line()</code></pre>
-<pre><code>## Warning: Removed 1 row(s) containing missing values (geom_path).</code></pre>
+<pre><code>## Warning: Removed 39 row(s) containing missing values (geom_path).</code></pre>
 <pre class="r"><code># plots with 7-day rolling average
 ggplot(df.ts, aes(date, new_cases)) + geom_line(aes(y=rollmean(new_cases, 7, na.pad=TRUE)))</code></pre>
 <pre><code>## Warning: Removed 7 row(s) containing missing values (geom_path).</code></pre>
 <pre class="r"><code>ggplot(df.ts, aes(date, new_deaths)) + geom_line(aes(y=rollmean(new_deaths, 7, na.pad=TRUE)))</code></pre>
-<pre><code>## Warning: Removed 7 row(s) containing missing values (geom_path).</code></pre>
+<pre><code>## Warning: Removed 45 row(s) containing missing values (geom_path).</code></pre>
 </div>
 <div id="determinants-of-us-covid-19-cases" class="section level2">
 <h2>Determinants of US COVID-19 cases</h2>
@@ -1698,11 +1685,15 @@ est &lt;- lm(log.new.cases ~ gatherings_restrictions + lag(gatherings_restrictio
 </div>
 <div id="correcting-for-serial-correlation" class="section level2">
 <h2>Correcting for Serial Correlation</h2>
-<p>Now let’s compute HAC (Heteroskedasticity and Autocorrelation Consistent) standard errors. To do so, we’ll use the <code>NeweyWest</code> option in the <code>coeftest()</code> function of the <code>lmtest</code> package.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p>
-<pre class="r"><code>coeftest(est) # re-display baseline results
-coeftest(est, vcov=NeweyWest)</code></pre>
+<p>Now let’s compute HAC (Heteroskedasticity and Autocorrelation Consistent) standard errors. To do so, we’ll use the <code>vcov</code> option in the <code>modelsummary()</code> function along with the <code>NeweyWest</code> function from the <code>sandwich</code> package.</p>
+<pre class="r"><code>modelsummary(est) # re-display baseline results
+modelsummary(est, vcov=sandwich::NeweyWest(est))</code></pre>
+<p>or, putting them side-by-side:</p>
+<pre class="r"><code>modelsummary(list(est,est), 
+             vcov=list(&quot;iid&quot;,sandwich::NeweyWest(est))
+            )</code></pre>
 <ol start="2" style="list-style-type: decimal">
-<li>How does your interpretation of the interest rate model change, using the Newey-West standard errors?</li>
+<li>How does your interpretation of the the effect of gathering restrictions change after using the Newey-West standard errors?</li>
 </ol>
 </div>
 <div id="oklahoma-covid-cases" class="section level2">
@@ -1713,16 +1704,16 @@ df.ts.ok %&lt;&gt;% mutate(new_deaths = difference(deaths),
                      new_tests  = difference(tests),
                      new_cases  = difference(confirmed))
 ggplot(df.ts.ok, aes(date, new_cases)) + geom_line(aes(y=rollmean(new_cases, 7, na.pad=TRUE)))</code></pre>
-<pre><code>## Warning: Removed 7 row(s) containing missing values (geom_path).</code></pre>
+<pre><code>## Warning: Removed 12 row(s) containing missing values (geom_path).</code></pre>
 <pre class="r"><code>ggplot(df.ts.ok, aes(date, new_deaths)) + geom_line(aes(y=rollmean(new_deaths, 7, na.pad=TRUE)))</code></pre>
-<pre><code>## Warning: Removed 19 row(s) containing missing values (geom_path).</code></pre>
+<pre><code>## Warning: Removed 12 row(s) containing missing values (geom_path).</code></pre>
 <pre class="r"><code>df.ts.ok %&lt;&gt;% mutate(log.new.cases = log(new_cases),
                      log.new.cases = replace(log.new.cases,new_cases==0,NA_real_)) # since log(0) = -Inf
-est &lt;- lm(log.new.cases ~ gatherings_restrictions + lag(gatherings_restrictions,7) + 
+est.ok &lt;- lm(log.new.cases ~ gatherings_restrictions + lag(gatherings_restrictions,7) + 
                           lag(gatherings_restrictions,14) + lag(log.new.cases,7), data=df.ts.ok)</code></pre>
 <p>With HAC standard errors:</p>
-<pre class="r"><code>coeftest(est) # re-display baseline results
-coeftest(est, vcov=NeweyWest)</code></pre>
+<pre class="r"><code>modelsummary(list(est.ok,est.ok),
+             vcov=list(&quot;iid&quot;,sandwich::NeweyWest(est.ok)))</code></pre>
 </div>
 <div id="traditional-macroeconomic-model-of-interest-rates-and-inflation" class="section level2">
 <h2>Traditional macroeconomic model of interest rates and inflation</h2>
@@ -1743,13 +1734,8 @@ coeftest(est, vcov=NeweyWest)</code></pre>
 <p>Now let’s estimate the following regression model: <span class="math display">\[
 i3_{t} = \beta_0 + \beta_1 inf_t + \beta_2 inf_{t-1} + \beta_3 inf_{t-2} + \beta_4 def_{t} + u_t
 \]</span> where <span class="math inline">\(i3\)</span> is the 3-month Treasury Bill interest rate, <span class="math inline">\(inf\)</span> is the inflation rate (as measured by the CPI), and <span class="math inline">\(def\)</span> is the budget deficit as a percentage of GDP.</p>
-<pre class="r"><code>est &lt;- lm(i3 ~ inf + lag(inf,1) + lag(inf,2) + def, data=df.ts)</code></pre>
-</div>
-<div class="footnotes">
-<hr />
-<ol>
-<li id="fn1"><p><code>NeweyWest</code> comes from the <code>sandwich</code> package.<a href="#fnref1" class="footnote-back">↩︎</a></p></li>
-</ol>
+<pre class="r"><code>est &lt;- lm(i3 ~ inf + lag(inf,1) + lag(inf,2) + def, data=df.ts)
+modelsummary(list(est,est), vcov=list(&quot;iid&quot;,sandwich::NeweyWest(est)))</code></pre>
 </div>
 
 
@@ -1761,7 +1747,7 @@ i3_{t} = \beta_0 + \beta_1 inf_t + \beta_2 inf_{t-1} + \beta_3 inf_{t-2} + \beta
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();
@@ -1779,7 +1765,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
+    $(this).parent().toggleClass('nav-tabs-open');
   });
 });
 </script>
