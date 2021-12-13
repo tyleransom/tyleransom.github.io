@@ -1,11 +1,11 @@
 ---
 title: "In-Class Lab 16"
 author: "ECON 4223 (Prof. Tyler Ransom, U of Oklahoma)"
-date: "April 20, 2021"
+date: "Nov 11, 2021"
 output:
+  pdf_document: default
   html_document:
     df_print: paged
-  pdf_document: default
   word_document: default
 bibliography: biblio.bib
 ---
@@ -42,7 +42,7 @@ We are interested to know if the policy caused workers to spend more time out of
 ### Summary statistics
 In difference-in-differences settings, it is often helpful to see if there even is a policy effect. Let's compute the difference-in-differences (with no regression) based on the pre- and post-means for the treatment and control groups
 
-```{r}
+```{r, warning=F, message=F}
 df %>% group_by(afchnge,highearn) %>% summarize(mean.ldurat = mean(ldurat))
 ```
 
@@ -82,7 +82,7 @@ est.did.x <- lm_robust(ldurat ~ afchnge*highearn + male + married + age + I(age^
 ```
 
 Calling `modelsummary` can help view the results:
-```{r, results = 'show'}
+```{r, results = 'show', warning=F}
 modelsummary(list(est.did,est.did.x),output="latex")
 ```
 
