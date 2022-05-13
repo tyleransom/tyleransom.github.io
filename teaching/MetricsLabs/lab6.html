@@ -11,7 +11,7 @@
 
 <meta name="author" content="ECON 4223 (Prof. Tyler Ransom, U of Oklahoma)" />
 
-<meta name="date" content="2021-09-14" />
+<meta name="date" content="2022-02-08" />
 
 <title>In-Class Lab 6</title>
 
@@ -169,7 +169,7 @@ pre code {
 
 <h1 class="title toc-ignore">In-Class Lab 6</h1>
 <h4 class="author">ECON 4223 (Prof. Tyler Ransom, U of Oklahoma)</h4>
-<h4 class="date">September 14, 2021</h4>
+<h4 class="date">February 8, 2022</h4>
 
 </div>
 
@@ -199,10 +199,10 @@ library(modelsummary)</code></pre>
 </div>
 <div id="creating-factor-variables" class="section level2">
 <h2>Creating factor variables</h2>
-<p>Let’s convert our 0/1 numeric variable <code>male</code> to a factor with levels <code>&quot;male&quot;</code> and <code>&quot;female&quot;</code>:</p>
+<p>Let’s convert our 0/1 numeric variable <code>male</code> to a factor with levels <code>&quot;yes&quot;</code> and <code>&quot;no&quot;</code>:</p>
 <pre class="r"><code>df %&lt;&gt;% mutate(male = factor(male), male = fct_recode(male, yes = &quot;1&quot;, no = &quot;0&quot;))</code></pre>
 <p>The <code>df %&lt;&gt;% mutate(...)</code> uses the <code>%&lt;&gt;%</code> operator which is shorthand for <code>df &lt;- df %&gt;% mutate(...)</code>. In other words, <code>%&lt;&gt;%</code> pipes forwards and then pipes everything backwards. This saves a little bit on syntax if you want to overwrite your data frame.</p>
-<p>The first part of the <code>mutate()</code> function converts the 0/1 values to categories named <code>&quot;0&quot;</code> and <code>&quot;1&quot;</code>. The second part gives the categories more descriptive labels (<code>&quot;male&quot;</code> and <code>&quot;female&quot;</code>).</p>
+<p>The first part of the <code>mutate()</code> function converts the 0/1 values to categories named <code>&quot;0&quot;</code> and <code>&quot;1&quot;</code>. The second part gives the categories more descriptive labels (<code>&quot;yes&quot;</code> and <code>&quot;no&quot;</code>).</p>
 <p>Let’s repeat this for some of the other variables: <code>ratemarr</code>, <code>relig</code>, <code>kids</code>, and <code>affair</code>:</p>
 <pre class="r"><code>df %&lt;&gt;% mutate(ratemarr = factor(ratemarr), 
                ratemarr = fct_recode(ratemarr, very_happy = &quot;5&quot;, happy = &quot;4&quot;, average = &quot;3&quot;, 

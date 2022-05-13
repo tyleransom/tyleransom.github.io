@@ -11,6 +11,7 @@
 
 <meta name="author" content="ECON 4223 (Prof. Tyler Ransom, U of Oklahoma)" />
 
+<meta name="date" content="2022-04-14" />
 
 <title>In-Class Lab 16</title>
 
@@ -190,7 +191,7 @@ pre code {
 
 <h1 class="title toc-ignore">In-Class Lab 16</h1>
 <h4 class="author">ECON 4223 (Prof. Tyler Ransom, U of Oklahoma)</h4>
-<h4 class="date">Nov 11, 2021</h4>
+<h4 class="date">April 14, 2022</h4>
 
 </div>
 
@@ -220,7 +221,6 @@ df %&lt;&gt;% filter(ky==1)</code></pre>
 <h3>Summary statistics</h3>
 <p>In difference-in-differences settings, it is often helpful to see if there even is a policy effect. Let’s compute the difference-in-differences (with no regression) based on the pre- and post-means for the treatment and control groups</p>
 <pre class="r"><code>df %&gt;% group_by(afchnge,highearn) %&gt;% summarize(mean.ldurat = mean(ldurat))</code></pre>
-<pre><code>## `summarise()` has grouped output by &#39;afchnge&#39;. You can override using the `.groups` argument.</code></pre>
 <ol style="list-style-type: decimal">
 <li>What is the difference in the differences? What is its interpretation? (Hint: recall that the dependent variable is logged)</li>
 </ol>
@@ -238,8 +238,8 @@ df %&lt;&gt;% filter(ky==1)</code></pre>
 </div>
 <div id="including-more-xs" class="section level2">
 <h2>Including more <span class="math inline">\(x\)</span>’s</h2>
-<p>We might want to control for other aspects of our workers. For example, perhaps claims made by construction or manufacturing workers tend to have longer duration than claims made workers in other industries. Or maybe those claiming back injuries tend to have lonter claims than those claiming head injuries. One may also want to control for worker demographics such as gender, marital status, and age.</p>
-<p>Estimate an expanded version of the basic regression modle, where the following additional variables are included:</p>
+<p>We might want to control for other aspects of our workers. For example, perhaps claims made by construction or manufacturing workers tend to have longer duration than claims made workers in other industries. Or maybe those claiming back injuries tend to have longer claims than those claiming head injuries. One may also want to control for worker demographics such as gender, marital status, and age.</p>
+<p>Estimate an expanded version of the basic regression model, where the following additional variables are included:</p>
 <ul>
 <li><code>male</code></li>
 <li><code>married</code></li>
@@ -252,17 +252,6 @@ df %&lt;&gt;% filter(ky==1)</code></pre>
 <p><strong>Be sure to format <code>indust</code> and <code>injtyp</code> as factors before proceeding.</strong> Call your model <code>est.did.x</code>.</p>
 <p>Calling <code>modelsummary</code> can help view the results:</p>
 <pre class="r"><code>modelsummary(list(est.did,est.did.x),output=&quot;latex&quot;)</code></pre>
-<pre><code>## Warning: To compile a LaTeX document with this table, the following commands must be placed in the document preamble:
-## 
-## \usepackage{booktabs}
-## \usepackage{siunitx}
-## \newcolumntype{d}{S[input-symbols = ()]}
-## 
-## To disable `siunitx` and prevent `modelsummary` from wrapping numeric entries in `\num{}`, call:
-## 
-## options(&quot;modelsummary_format_numeric_latex&quot; = &quot;plain&quot;)
-## 
-## This warning is displayed once per session.</code></pre>
 <ol start="3" style="list-style-type: decimal">
 <li><p>How different is your estimate of <span class="math inline">\(\hat{\delta}_1\)</span> from that in (2)?</p></li>
 <li><p>Do you see any interesting patterns among the <span class="math inline">\(x\)</span>’s in predicting log duration of benefits?</p></li>

@@ -11,7 +11,7 @@
 
 <meta name="author" content="ECON 4223 (Prof. Tyler Ransom, U of Oklahoma)" />
 
-<meta name="date" content="2021-09-02" />
+<meta name="date" content="2022-01-27" />
 
 <title>In-class Lab 3</title>
 
@@ -191,7 +191,7 @@ pre code {
 
 <h1 class="title toc-ignore">In-class Lab 3</h1>
 <h4 class="author">ECON 4223 (Prof. Tyler Ransom, U of Oklahoma)</h4>
-<h4 class="date">September 2, 2021</h4>
+<h4 class="date">January 27, 2022</h4>
 
 </div>
 
@@ -241,15 +241,16 @@ beta0 &lt;- mean(df$math10)-beta1*mean(df$expend)</code></pre>
 <p>Let’s consider a modified version of our model, where now we use <em>log</em> expenditures instead of expenditures. Why might we want to use log expenditures? Likely because we think that each additional dollar spent <em>doesn’t</em> have an equal effect on pass rates. That is, additional dollars spent likely have diminishing effects on pass rates. (See also: the Law of Diminishing Marginal Returns)</p>
 <p>Create the log expenditures variable using <code>mutate()</code>:</p>
 <pre class="r"><code>df &lt;- df %&gt;% mutate(logexpend = log(expend))</code></pre>
-<p>Now estimate your model again and re-do the visualization:</p>
+<p>Now estimate your model again and re-do the visualization (showing both functional forms together):</p>
 <pre class="r"><code>est &lt;- lm(math10 ~ logexpend, data=df)
 tidy(est)
 glance(est)
 modelsummary(est)
 
-ggplot(df,aes(logexpend,math10)) +
-    geom_point() +
-    geom_smooth(method=&#39;lm&#39;)</code></pre>
+ggplot(df, aes(expend,math10)) +
+  geom_point() +
+  stat_smooth(method = &quot;lm&quot;, col = &quot;red&quot; ,se=F,formula = y~log(x)) +
+  stat_smooth(method = &quot;lm&quot;, col = &quot;blue&quot;,se=F)</code></pre>
 <pre><code>## `geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
 <p>What is the interpretation of <span class="math inline">\(\beta_1\)</span> in this new model? (Add it as a comment in your R script)</p>
 </div>

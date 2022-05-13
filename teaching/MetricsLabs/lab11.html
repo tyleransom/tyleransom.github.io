@@ -11,7 +11,7 @@
 
 <meta name="author" content="ECON 4223 (Prof. Tyler Ransom, U of Oklahoma)" />
 
-<meta name="date" content="2021-10-05" />
+<meta name="date" content="2022-03-03" />
 
 <title>In-Class Lab 11</title>
 
@@ -169,7 +169,7 @@ pre code {
 
 <h1 class="title toc-ignore">In-Class Lab 11</h1>
 <h4 class="author">ECON 4223 (Prof. Tyler Ransom, U of Oklahoma)</h4>
-<h4 class="date">October 5, 2021</h4>
+<h4 class="date">March 3, 2022</h4>
 
 </div>
 
@@ -271,16 +271,9 @@ cps_data %&gt;% select(age,educ,sex) %&gt;%
 <div id="loading-data-from-other-packages" class="section level2">
 <h2>Loading data from other packages</h2>
 <p>In Lab 10, I introduced you to the <code>pdfetch</code> package. I will now show you how to import stock price data and FRED data using this package. Note that there are other packages out there that will also do this, so feel free to look around.</p>
-<pre class="r"><code>library(pdfetch)</code></pre>
-<pre><code>## Warning: package &#39;pdfetch&#39; was built under R version 4.1.1</code></pre>
-<pre class="r"><code>library(tsibble)</code></pre>
-<pre><code>## Warning: package &#39;tsibble&#39; was built under R version 4.1.1</code></pre>
-<pre><code>## 
-## Attaching package: &#39;tsibble&#39;</code></pre>
-<pre><code>## The following objects are masked from &#39;package:base&#39;:
-## 
-##     intersect, setdiff, union</code></pre>
-<pre class="r"><code># get data on GDP and consumption expenditures from FRED
+<pre class="r"><code>library(pdfetch)
+library(tsibble)
+# get data on GDP and consumption expenditures from FRED
 df &lt;- pdfetch_FRED(c(&quot;GDPC1&quot;, &quot;PCECC96&quot;)) # N.B. this is an object of type XTS, not tsibble
 
 # get Apple &amp; Amazon stock price data from Yahoo Finance
