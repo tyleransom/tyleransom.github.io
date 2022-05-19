@@ -4,6 +4,7 @@
 \usepackage[verbose,nomarginpar,margin=1in]{geometry}
 \usepackage{array}
 \usepackage{booktabs}
+\usepackage{threeparttable}
 
 \makeatletter
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
@@ -51,6 +52,7 @@ Oklahoma    & 2017 & Fall     & Economics of Education      & BA    & 4.29 / 5.0
 \end{tabular}
 
 
+\begin{threeparttable}
 \begin{tabular}{>{\centering}m{2cm}>{\centering}m{1cm}>{\centering}p{1.5cm}>{\centering}m{5.25cm}>{\centering}m{1cm}>{\centering}m{2cm}>{\centering}m{2.5cm}}
 \toprule
 Institution & Year & Semester & Course                      & Level & Average Overall Rating & Responses / Total Enrollment \tabularnewline
@@ -60,7 +62,12 @@ Institution & Year & Semester & Course                      & Level & Average Ov
             &      &          &                             &       &                        &                              \tabularnewline
             & 2021 & Fall     & Econometrics III            & PhD   & 4.75 / 5.00            & ~5 / ~5                      \tabularnewline
             & 2021 & Fall     & Econometric Analysis        & BA    & 4.87 / 5.00            & ~8 / 23                      \tabularnewline
+            &      &          &                             &       &                        &                              \tabularnewline
+            & 2022 & Spring   & Econometric Analysis        & BA    & 85.7\%                 & ~7 / 22                      \tabularnewline
+            & 2022 & Spring   & Data Science for Economists & MA    & 100\%                  & ~7 / ~7                      \tabularnewline
 \bottomrule
 \end{tabular}
+\footnotesize Beginning in the Spring 2022 semester, Oklahoma revamped its student rating system. For the ``Average Overall Rating'' I report the percentage of respondents who stated that they ``frequently'' ``feel supported and empowered as [they] worked to reach the academic goals in this course.''
+\end{threeparttable}
 \par\end{center}
 \end{document}
