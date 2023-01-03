@@ -32,6 +32,9 @@
     gtag('config', 'G-GNJD50R0Z7');
     </script>
 
+    <!-- allow "copy code" button on BibTeX references -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js"></script>
+
     <!-- For all browsers -->
     <link rel="stylesheet" href="assets/css/academicons.min.css"/>
     <link rel="stylesheet" href="assets/css/academicons.css"/>
@@ -80,6 +83,7 @@
     </style>
   </head>
   <body>
+    <button class="btn" data-clipboard-target="#code-block">Copy to Clipboard</button>
     <div class="wrapper">
       <header>
         <h1>Tyler Ransom</h1>
@@ -197,7 +201,7 @@
     <p style="margin:0"><button class="accordion">
       BibTeX citation
     </button>
-    <div class="panel" style="background-color: #F1F1F1; color: #666; padding: 10px;"><p> <pre> <code>
+    <div class="panel" style="background-color: #F1F1F1; color: #666; padding: 10px;"><p> <pre id="code-block"> <code>
 @article{kosar_al2022,
 author = {Gizem Ko\c{s}ar and Tyler Ransom and Wilbert {van der Klaauw}},
 title = {Understanding Migration Aversion Using Elicited Counterfactual Choice Probabilities},
@@ -428,5 +432,6 @@ doi = {10.1016/j.jeconom.2020.07.056}
       }
     }
     </script>
+    <script> var clipboard = new ClipboardJS('.btn'); </script>
   </body>
 </html>
