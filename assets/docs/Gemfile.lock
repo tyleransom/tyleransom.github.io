@@ -33,10 +33,10 @@ GEM
       sass (~> 3.4)
     jekyll-watch (2.2.1)
       listen (~> 3.0)
-    kramdown (2.3.1)
-      rexml (>= 3.2.5)
+    kramdown (2.5.1)
+      rexml (>= 3.3.9)
     liquid (4.0.3)
-    listen (3.2.1)
+    listen (3.9.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
     mercenary (0.3.6)
@@ -48,8 +48,7 @@ GEM
     rb-fsevent (0.10.4)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
-    rexml (3.2.8)
-      strscan (>= 3.0.9)
+    rexml (3.4.1)
     rouge (3.22.0)
     safe_yaml (1.0.5)
     sass (3.7.4)
@@ -57,10 +56,13 @@ GEM
     sass-listen (4.0.0)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
-    strscan (3.1.0)
+    tzinfo (2.0.6)
+      concurrent-ruby (~> 1.0)
+    tzinfo-data (1.2025.1)
+      tzinfo (>= 1.0.0)
 
 PLATFORMS
-  ruby
+  x64-mingw-ucrt
 
 DEPENDENCIES
   ffi (>= 1.9.24)
@@ -68,10 +70,11 @@ DEPENDENCIES
   jekyll-feed (~> 0.6)
   kramdown (>= 2.3.0)
   minima (~> 2.0)
+  rexml (>= 3.3.6)
   tzinfo-data
 
 RUBY VERSION
-   ruby 2.4.0p0
+   ruby 3.2.2p53
 
 BUNDLED WITH
-   1.15.0
+   2.4.10
