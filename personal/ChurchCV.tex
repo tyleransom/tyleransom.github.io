@@ -1,0 +1,128 @@
+\documentclass[11pt,english]{article}
+\IfFileExists{lmodern.sty}{\usepackage{lmodern}}{}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage{babel}
+%\usepackage[garamondx,bigdelims]{newtxmath}
+%\usepackage{garamondx}
+%\usepackage{mathpazo}
+%\usepackage{mathptmx}
+\usepackage{newcent}
+
+% Colors: see  http://www.math.umbc.edu/~rouben/beamer/quickstart-Z-H-25.html
+\usepackage{color}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{oucrimson}   {RGB}{132.,22. ,23. }
+\definecolor{byublue}     {RGB}{0.  ,30. ,76. }
+\definecolor{navyblue}    {RGB}{0.  ,0.  ,128.}
+\definecolor{darkblue}    {RGB}{0.  ,0.  ,139.}
+\definecolor{dukeblue}    {RGB}{0.  ,0.  ,156.}
+
+% Layout
+\usepackage{multirow}
+\usepackage{setspace} %singlespacing; onehalfspacing; doublespacing; setstretch{1.1}
+\setstretch{1.5}
+\usepackage[verbose,margin=1in]{geometry} % Margins
+\setlength{\headheight}{15pt} % Sufficent room for headers
+\usepackage[bottom]{footmisc} % Forces footnotes on bottom
+
+% Headers/Footers
+%\usepackage{datenumber}
+\usepackage{lastpage}
+\setlength{\headheight}{0pt}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}\renewcommand{\headrulewidth}{0pt}
+\lhead{} \chead{} \rhead{}
+%\lfoot{Job Market Candidate - Duke University Department of Economics \\ \datemonthname~\the\year} \cfoot{}
+\lfoot{\today} \cfoot{}
+\rfoot{Page \thepage \,of \pageref{LastPage}}
+
+% Useful Packages
+%\usepackage{bookmark} % For speedier bookmarks
+%\usepackage{amsthm}   % For detailed theorems
+%\usepackage{amssymb}  % For fancy math symbols
+%\usepackage{amsmath}  % For awesome equations/equation arrays
+\usepackage{array}    % For tubular tables
+\usepackage{booktabs}
+\usepackage{longtable}% For long tables
+\usepackage[flushleft]{threeparttable} % For three-part tables
+\usepackage{multicol} % For multi-column cells
+\usepackage{graphicx} % For shiny pictures
+\usepackage{subfig}   % For sub-shiny pictures
+\usepackage{enumerate}% For cusomtizable lists
+%\usepackage{pstricks,pst-node,pst-tree,pst-plot} % For trees
+
+% Bib
+\usepackage[authoryear]{natbib} % Bibliography
+\usepackage{url}                % Allows urls in bib
+
+% TOC
+\setcounter{tocdepth}{4}
+
+% Links
+\usepackage{hyperref}    % Always add hyperref (almost) last
+\hypersetup{colorlinks,breaklinks,citecolor=black,filecolor=black,linkcolor=oucrimson,urlcolor=oucrimson}
+\usepackage[all]{hypcap} % Links point to top of image, builds on hyperref
+\usepackage{breakurl}    % Allows urls to wrap, including hyperref
+
+% Custom commands
+\newcommand{\makeheading}[2]%
+        {\hspace*{-\marginparsep minus \marginparwidth}%
+         \begin{minipage}[t]{\textwidth\marginparwidth\marginparsep}%
+         {\LARGE\bfseries #1} \hfill  {\LARGE\bfseries #2 \hspace*{-2.3\marginparsep minus \marginparwidth}}\\[-0.2\baselineskip]%
+                 \rule{\textwidth}{1.5pt}\rule{\marginparsep}{1.5pt}\rule{\marginparwidth}{1.5pt}%
+         \end{minipage}}
+
+\setlength{\parindent}{0in}
+\reversemarginpar
+\renewcommand{\section}[2]{
+        \pagebreak[3]%
+        \vspace{1.0\baselineskip}%
+        \phantomsection\addcontentsline{toc}{section}{#1}%
+        \hspace{0in}%
+        %\marginpar{\raggedright \scshape #1}#2}
+        %\rule[3.5pt]{0.9in}{1.5pt} ~~
+        {\raggedright \scshape \large \textbf{#1}}%
+        \vspace{0.25\baselineskip}#2
+}
+
+
+\begin{document}
+%\thispagestyle{empty}
+\makeheading{TYLER M. RANSOM}{CV of Church Service}
+
+\setstretch{1.2}
+
+\bigskip\par
+The following is a complete history of volunteer leadership and teaching positions I have held in my local congregation of the Church of Jesus Christ of Latter-day Saints. Each was formally approved by congregation members through vote.
+
+\section{Callings Held}\par
+% ==================================================================================
+\begin{tabular}{p{.85in}>{\hangindent=1em}p{5.65in}<{\raggedright}}
+2025-- & Bishopric 1st Counselor, Noble Ward (Oklahoma)\\
+2023--2025 & Bishopric 1st Counselor, Norman 1st Ward (Oklahoma)\\
+2023 & Bishopric 2nd Counselor, Norman 1st Ward (Oklahoma)\\
+2022--2023 & Ward Financial Clerk, Norman 1st Ward (Oklahoma)\\
+2021--2022 & Early Morning Seminary Teacher, Noble / Norman 1st Wards (Oklahoma)\\
+2019--2021 & Elder's Quorum President, Noble Ward (Oklahoma)\\
+2019 & Youth Sunday School Teacher (ages 13--14), Noble Ward (Oklahoma)\\
+2019 & Young Men 2nd Counselor, Noble Ward (Oklahoma)\\
+2017--2019 & Scoutmaster (Boy Scouts), Noble Ward (Oklahoma)\\
+2015--2017 & Elder's Quorum 1st Counselor, Durham 1st Ward (North Carolina)\\
+2012--2015 & Ward Clerk, Durham 1st Ward (North Carolina)\\
+2011--2012 & Ward Membership Clerk, Durham 1st Ward (North Carolina)\\
+2009--2011 & Elder's Quorum Secretary, Durham 1st Ward (North Carolina) \\
+2008--2009 & Elder's Quorum President, BYU 59th Ward (Utah) \\
+2008--2009 & Temple Worker, Provo Temple (Utah) \\
+2008 & Emergency Preparedness Committee, BYU 59th Ward (Utah)\\
+2007 & Webelos (Cub Scouts) Adviser, Heatheridge 3rd Ward (Utah)\\
+2007 & FHE Leader, BYU 129th (?) Ward (Utah) \\
+2004--2006 & Full-time Missionary (Nagoya, Japan) \\
+2003--2004 & Elder's Quorum 2nd Counselor, BYU 96th Ward  (Utah) \\
+2002--2003 & Priest's Quorum 1st Assistant, Heatheridge 3rd Ward  (Utah) \\
+2000--2001 & Teacher's Quorum President, Princeton 1st Ward  (New Jersey) \\
+1998--1999 & Deacon's Quorum President, Heatheridge 3rd Ward (Utah) \\
+1997--1998 & Deacon's Quorum 1st Counselor, Heatheridge 3rd Ward (Utah) \\
+\end{tabular}
+\end{document}
