@@ -13,23 +13,18 @@
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-      ga('create', 'UA-29643011-3', 'auto');
-      ga('send', 'pageview');
-    </script>
-
-    <!-- New GA4 tracking code, see https://support.google.com/analytics/answer/10271001#analyticsjs-enable-basic --> 
+    <!-- Google Analytics 4 -->
+    <!-- FORKERS: GET YOUR OWN TRACKING ID at https://analytics.google.com -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-GNJD50R0Z7"></script>
     <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-GNJD50R0Z7');
+
+    // Only track on tyleransom.github.io - prevents tracking from forked sites
+    if (window.location.hostname === 'tyleransom.github.io') {
+      gtag('config', 'G-GNJD50R0Z7');
+    }
     </script>
 
     <!-- For all browsers -->
@@ -114,9 +109,9 @@
       <img src="Headshot2025-small.jpg" height="250" width="335" alt="Tyler Ransom"></h3>
   <p>I am an Associate Professor of <a href="http://www.ou.edu/cas/economics">Economics</a> at the <a href="http://www.ou.edu/">University of Oklahoma</a>, a Research Fellow at the <a href="https://www.iza.org/">Institute for the Study of Labor (IZA)</a>, and a Fellow at <a href="https://www.globalabororganization.org/">Global Labor Organization (GLO)</a>. I received my PhD in <a href="http://econ.duke.edu">Economics</a> from <a href="http://www.duke.edu">Duke University</a> in 2015, where I specialized in dynamic models of human capital accumulation.</p>
 
-  <p>My research focuses on labor economics, economics of education, urban economics, and applications of machine learning. I have published extensively in leading economics journals, including the <i>Journal of Political Economy</i>, the <i>Journal of Labor Economics</i>, the <i>Journal of Human Resources</i>, and the <i>Journal of Econometrics</i>. My recent work has examined college admissions practices, educational inequality, and human capital development. I also serve as an Associate Editor of the <i>Annals of Economics and Statistics</i> and <i>Economics of Education Review</i>.</p>
+  <p>My research focuses on labor economics, economics of education, urban economics, and applications of machine learning. I have published extensively in leading economics journals, including the <i>Journal of Political Economy</i>, the <i>Journal of Labor Economics</i>, the <i>Journal of Human Resources</i>, and the <i>Journal of Econometrics</i>. My recent work has examined college admissions practices, educational inequality, and human capital development. I also serve as a Coeditor of <i>Economics of Education Review</i> and an Associate Editor of the <i>Annals of Economics and Statistics</i>.</p>
 
-  <p>At OU, I direct the Economics BA/MA Program and teach courses in econometrics, data science, and economics of education at both undergraduate and graduate levels. My contributions to research and teaching were recognized with the 2022 Irene Rothbaum Outstanding Assistant Professor Award from the OU Dodge Family College of Arts & Sciences. My research has had significant policy impact and has been featured in major media outlets including the <i>New York Times</i>, <i>The Economist</i>, <i>The Atlantic</i>, and <i>The Guardian</i>. In 2025, I was awarded the Heritage Foundation Freedom and Opportunity Academic Prize in recognition of my scholarship and contributions to the academic community.</p>
+  <p>At OU, I direct the economics in-person master's programs and teach courses in econometrics, data science, and economics of education at both undergraduate and graduate levels. My contributions to research and teaching were recognized with the 2022 Irene Rothbaum Outstanding Assistant Professor Award from the OU Dodge Family College of Arts & Sciences. In 2025, I was awarded the Heritage Foundation Freedom and Opportunity Academic Prize in recognition of my scholarship and contributions to the academic community. My research has had significant policy impact and has been featured in major media outlets including the <i>New York Times</i>, <i>The Economist</i>, <i>The Atlantic</i>, and <i>The Guardian</i>. As of late 2025, I was ranked in the top 80 of young economists worldwide on <a href="https://ideas.repec.org/top/top.young.html">RePEc</a>, out of a pool of over 15,000. I also rank in the top 3% of all nearly 73,000 RePEc authors based on <a href="https://ideas.repec.org/top/top.person.all10.html">publications over the past 10 years</a>.</p>
 
   <p>I bring strong technical expertise to my research, with proficiency in Matlab, Stata, R, Julia, Python, LaTeX, Shell/Bash, SLURM, and Git. I also have advanced proficiency in Japanese and beginning knowledge of Korean and German.</p>
       </section>
